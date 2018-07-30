@@ -1,0 +1,17 @@
+body{
+  font-family: 'Libre Baskerville', serif;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.red-quote{
+  color: red;
+}
