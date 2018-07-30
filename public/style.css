@@ -1,5 +1,6 @@
 body{
   font-family: 'Libre Baskerville', serif;
+  background-color: #c10000;
 }
 
 h1 {
@@ -14,4 +15,13 @@ h1 {
 
 .red-quote{
   color: red;
+}
+
+.img{
+  width: 500px;
+  height: 400px;
+}
+
+li {
+  list-style-type: none;
 }
