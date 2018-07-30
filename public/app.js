@@ -1,14 +1,62 @@
-var CATS_ARRAY = [
+var CAT_ARRAY = [
+  {name: "Jim", food: "Cheese", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkR859WIv6s6NKRbcBCNXKZanLy06xYujmPYSU_vZSPIdu7gyB"}
 
 ];
 
-var addCat = function(){
+var addCats = function(catsName, catFood, catPic){
 
+  var newCat = createNewCat();
+  var catName = createCatName(catsName);
+  var faveFood = createCatFood(catFood);
+  var catPicture = createCatPic(catPic);
+
+  appendElements(newCat, catName, faveFood, catPicture);
+
+}
+
+var createNewCat = function(){
+  var newCat = document.createElement('ul');
+  newCat.classList.add('cat');
+  return newCat;
+}
+
+var createCatName = function(name){
+  var catName = document.createElement('li');
+  catName.innerText = "Name: " + name;
+  return catName;
+}
+
+var createCatFood = function(catfood){
+  var faveFood = document.createElement('li');
+  faveFood.innerText = "Favourite Food: " + catfood;
+  return faveFood;
+}
+
+var createCatPic = function(catPic){
+  var catLi = document.createElement('li');
+
+  var catImage = document.createElement('img');
+  catImage.src = catPic;
+
+  catLi.appendChild(catImage);
+  return catLi;
+}
+
+var appendElements = function(newCat, catName, faveFood, catPicture){
+  newCat.appendChild(catName);
+  newCat.appendChild(faveFood);
+  newCat.appendChild(catPicture);
+
+  var cats = document.querySelector("#cats");
+  cats.appendChild(newCat);
+}
+
+var app = function() {
+  for(var cat of CAT_ARRAY){
+    addCats(cat.name, cat.food, cat.image)
+  }
 };
 
-var app = function(){
 
-
-};
 
 window.onload = app;
